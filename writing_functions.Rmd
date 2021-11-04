@@ -6,16 +6,48 @@ output: html_document
 ---
 
 ```{r, message = FALSE, warning = FALSE}
-
+library(tidyverse)
+library(rvest)
 ```
+
+## z-scores
+
+```{r, message = FALSE, warning = FALSE}
+x_vec = rnorm(25, mean = 5, sd = 4)
+
+(x_vec - mean(x_vec)) / sd(x_vec)
+
+z_scores = function(x) {
+  z = (x - mean(x)) / sd(x)
+  return(z)
+}
+
+z_scores(x = x_vec)
+
+y_vec = rnorm(40, mean = 12, sd = 0.3)
+
+z_scores(y_vec)
+```
+
+
 
 ```{r, message = FALSE, warning = FALSE}
 
+z_scores = function(x) {
+  if (!is.numeric(x)) {
+    stop("x needs to be numeric")
+  }
+  if (length(x) < 3) {
+    stop("x should have at least 3 numbers")
+  }
+  z = (x - mean(x)) / sd(x)
+  return(z)
+}
+
+
 ```
 
-```{r, message = FALSE, warning = FALSE}
 
-```
 
 ```{r, message = FALSE, warning = FALSE}
 
