@@ -94,8 +94,53 @@ sim_mean_sd(30, 5, 2)
 
 ```
 
-```{r, message = FALSE, warning = FALSE}
 
+
+```{r, message = FALSE, warning = FALSE}
+url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber=1"
+
+
+get_page_reviews = function(pageurl) {
+    page_html = read_html(pageurl)
+    review_titles = 
+      page_html %>%
+      html_nodes(".a-text-bold span") %>%
+      html_text()
+    
+    review_stars = 
+      page_html %>%
+      html_nodes("#cm_cr-review_list .review-rating") %>%
+      html_text() %>%
+      str_extract("^\\d") %>%
+      as.numeric()
+    
+    review_text = 
+      page_html %>%
+      html_nodes(".review-text-content span") %>%
+      html_text() %>% 
+      str_replace_all("\n", "") %>% 
+      str_trim()
+    
+    reviews = 
+      tibble(
+        title = review_titles,
+        stars = review_stars,
+        text = review_text
+      )
+  return(reviews)
+}
+
+base_url = "https://www.amazon.com/product-reviews/B00005JNBQ/ref=cm_cr_arp_d_viewopt_rvwer?ie=UTF8&reviewerType=avp_only_reviews&sortBy=recent&pageNumber="
+
+urls = str_c(base_url, 1:5)
+
+bind_rows(
+  get_page_reviews(urls[1]),
+  get_page_reviews(urls[2]),
+  get_page_reviews(urls[3]),
+  get_page_reviews(urls[4]),
+  get_page_reviews(urls[5])
+)
 ```
 
 ```{r, message = FALSE, warning = FALSE}
