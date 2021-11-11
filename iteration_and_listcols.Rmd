@@ -1,0 +1,38 @@
+---
+title: "Iteration and List Columns"
+author: "Ifrah Fayyaz"
+date: "11/11/2021"
+output: html_document
+---
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+```{r, message = FALSE, warning = FALSE}
+
+```

@@ -2,7 +2,7 @@
 title: "Writing Functions"
 author: "Ifrah Fayyaz"
 date: "11/4/2021"
-output: html_document
+output: github_document
 ---
 
 ```{r, message = FALSE, warning = FALSE}
@@ -143,34 +143,3 @@ bind_rows(
 )
 ```
 
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
-
-```{r, message = FALSE, warning = FALSE}
-
-```
